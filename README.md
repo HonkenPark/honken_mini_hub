@@ -1,6 +1,6 @@
-# LoL Store Scraper API
+# Honken Mini Hub
 
-League of Legends 스토어의 할인 정보를 스크래핑하고 제공하는 FastAPI 기반의 웹 애플리케이션입니다.
+To supply private services this project is created by FastAPI
 
 ## 프로젝트 구조
 
@@ -24,8 +24,8 @@ League of Legends 스토어의 할인 정보를 스크래핑하고 제공하는 
 
 ## 주요 기능
 
-- League of Legends 스토어의 할인 정보 자동 스크래핑
-- RESTful API를 통한 할인 정보 제공
+- League of Legends 스토어의 주간 스킨 할인 정보 취합
+- 취합된 정보의 이미지 및 영상화 후 유튜브에 게시
 - 스케줄러를 통한 주기적인 데이터 업데이트
 
 ## API 엔드포인트
