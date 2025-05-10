@@ -1,0 +1,6 @@
+playwright==1.52.0
+fastapi==0.115.12
+uvicorn==0.27.1
+python-dotenv==1.0.1
+apscheduler==3.10.4
+pytz==2024.1 
