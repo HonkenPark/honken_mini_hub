@@ -12,14 +12,24 @@ To supply private services this project is created by FastAPI
 │   │       ├── endpoints/# 각 API 엔드포인트 구현
 │   │       └── router.py # API 라우터 설정
 │   ├── core/             # 핵심 설정 및 구성 파일
+│   │   ├── config/       # 설정 파일 (YouTube API 등)
+│   │   └── scheduler.py  # 스케줄러 설정
 │   ├── models/           # 데이터 모델 정의
 │   ├── services/         # 비즈니스 로직 처리
+│   │   ├── lol_store/    # LoL 스토어 관련 서비스
+│   │   │   ├── __init__.py
+│   │   │   └── store.py  # 스토어 스크래핑 로직
+│   │   └── youtube/      # YouTube 관련 서비스
+│   │       ├── __init__.py
+│   │       └── uploader.py # 비디오 업로드 로직
 │   ├── utils/            # 유틸리티 함수
 │   └── main.py           # FastAPI 애플리케이션 진입점
 ├── data/                 # 데이터 저장 디렉토리
+│   ├── scraping_results.json # 스크래핑 결과
+│   └── exception_results.json # 예외 처리 결과
 ├── tests/               # 테스트 코드
 ├── requirements.txt     # 프로젝트 의존성
-└── scraping_results.json # 스크래핑 결과 저장
+└── README.md           # 프로젝트 문서
 ```
 
 ## 주요 기능
@@ -42,6 +52,8 @@ To supply private services this project is created by FastAPI
 - APScheduler: 스케줄링
 - Python-dotenv: 환경 변수 관리
 - Uvicorn: ASGI 서버
+- Google API Client: YouTube API 연동
+- OAuth2Client: YouTube 인증
 
 ## 설치 및 실행
 

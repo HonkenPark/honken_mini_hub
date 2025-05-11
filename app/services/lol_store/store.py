@@ -5,12 +5,32 @@ import json
 from datetime import datetime
 import pytz
 import os
+from pathlib import Path
 
 class LoLStoreService:
     def __init__(self):
-        self.latest_results: List[Dict[str, Any]] = []
-        self.last_scrape_time: datetime = None
-        self.data_file = "data/scraping_results.json"
+        self.data_file = Path("data/scraping_results.json")
+        self.exception_file = Path("data/exception_list.json")
+        self.data_file.parent.mkdir(exist_ok=True)
+        self.last_update = None
+        self.discounts = []
+        self.exception_list = self._load_exception_list()
+
+    def _load_exception_list(self) -> List[Dict[str, str]]:
+        """Load exception list from JSON file"""
+        if self.exception_file.exists():
+            with open(self.exception_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                return data.get("results", [])
+        return []
+
+    def _is_in_exception_list(self, result: Dict[str, Any]) -> bool:
+        """Check if the result is in exception list"""
+        for exception in self.exception_list:
+            if (result["name"] == exception["name"] and 
+                result["discount"] == exception["discount"]):
+                return True
+        return False
 
     async def fetch_discounted_skins(self, page):
         return await page.evaluate("""
@@ -41,6 +61,7 @@ class LoLStoreService:
         """)
 
     async def scroll_and_collect_data(self, page, pause=100, max_scrolls=300):
+        skipped_count = 0
         all_results = []
         last_count = 0
         scroll_step = 8000
@@ -49,6 +70,12 @@ class LoLStoreService:
             current_results = await self.fetch_discounted_skins(page)
             
             for result in current_results:
+                # Skip if result is in exception list
+                if self._is_in_exception_list(result):
+                    skipped_count += 1
+                    print(f"Skipping exception item: {result['name']} ({result['discount']})")
+                    continue
+                    
                 if result not in all_results:
                     all_results.append(result)
             
@@ -63,7 +90,7 @@ class LoLStoreService:
             count = await page.evaluate("document.querySelectorAll('.sale-discount').length")
             print(f"[스크롤 {i+1}] 현재 할인 항목 개수: {count}, 수집된 고유 항목: {len(all_results)}")
 
-            if len(all_results) == 15:
+            if len(all_results) + skipped_count == 15:
                 print("15개의 고유한 할인 항목을 모두 찾았습니다.")
                 break
             last_count = count
@@ -97,34 +124,43 @@ class LoLStoreService:
                 return all_results
 
     async def update_discounts(self):
-        """스크래핑을 실행하고 결과를 저장합니다."""
+        """Update discount information by scraping"""
         try:
             results = await self.fetch_all_discounted_skins()
-            self.latest_results = results
-            self.last_scrape_time = datetime.now(pytz.timezone('Asia/Seoul'))
+            self.discounts = results
+            self.last_update = datetime.now(pytz.timezone('Asia/Seoul')).isoformat()
             
-            # 결과를 JSON 파일로 저장
-            os.makedirs(os.path.dirname(self.data_file), exist_ok=True)
-            with open(self.data_file, 'w', encoding='utf-8') as f:
-                json.dump({
-                    'timestamp': self.last_scrape_time.isoformat(),
-                    'results': self.latest_results
-                }, f, ensure_ascii=False, indent=2)
-                
-            print(f"Scraping completed at {self.last_scrape_time}")
-            return True
+            # Save results
+            self._save_data()
+            
+            print(f"Scraping completed at {self.last_update}")
+            return self.discounts
         except Exception as e:
             print(f"Error during scheduled scraping: {str(e)}")
-            return False
+            return []
 
-    def get_latest_results(self):
-        """최신 스크래핑 결과를 반환합니다."""
+    async def get_discounts(self):
+        """Get current discount information"""
+        if not self.discounts:
+            self._load_data()
         return {
-            "last_update": self.last_scrape_time,
-            "count": len(self.latest_results),
-            "results": self.latest_results
+            "last_update": self.last_update,
+            "discounts": self.discounts
         }
 
-    def get_last_update(self):
-        """마지막 스크래핑 시간을 반환합니다."""
-        return {"last_update": self.last_scrape_time} 
+    def _save_data(self):
+        """Save data to JSON file"""
+        data = {
+            "last_update": self.last_update,
+            "discounts": self.discounts
+        }
+        with open(self.data_file, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+
+    def _load_data(self):
+        """Load data from JSON file"""
+        if self.data_file.exists():
+            with open(self.data_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                self.last_update = data.get("last_update")
+                self.discounts = data.get("discounts", []) 

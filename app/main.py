@@ -17,10 +17,8 @@ lol_store_service = LoLStoreService()
 
 @app.on_event("startup")
 async def startup_event():
-    """Initialize scheduler and run initial scraping on startup"""
+    """Initialize scheduler on startup"""
     setup_scheduler()
-    # Run initial scraping
-    await lol_store_service.update_discounts()
 
 @app.get("/")
 async def root():
@@ -33,10 +31,9 @@ async def root():
             "/api/v1/lol-store/discounts": "Get current discount information",
             "/api/v1/lol-store/last-update": "Get last scraping timestamp"
         }
-    } 
+    }
 
 @app.get("/discounts")
 async def get_discounts():
     """Get current discount information"""
-    discounts = await lol_store_service.update_discounts()
-    return discounts 
+    return await lol_store_service.get_discounts() 
