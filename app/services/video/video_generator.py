@@ -2,6 +2,9 @@ import os
 from pathlib import Path
 from typing import Optional, List
 from moviepy.editor import VideoFileClip, ImageClip, concatenate_videoclips, AudioFileClip, vfx
+import logging
+
+logger = logging.getLogger(__name__)
 
 class VideoGenerator:
     """비디오 생성 서비스 클래스"""
@@ -49,42 +52,56 @@ class VideoGenerator:
             # 이미지 파일들을 정렬
             image_files.sort()
             
-            # 각 이미지에 대한 클립 생성
+            # 이미지 클립 생성 및 연결
             clips = []
-            for i, img_path in enumerate(image_files):
-                clip = ImageClip(str(img_path)).set_duration(image_duration)
-                
-                # 첫 번째 클립이 아니면 페이드인 효과 추가
-                if i > 0:
-                    clip = clip.fx(vfx.fadein, transition_duration)
-                
-                # 마지막 클립이 아니면 페이드아웃 효과 추가
-                if i < len(image_files) - 1:
-                    clip = clip.fx(vfx.fadeout, transition_duration)
-                    
+            for image_path in image_files:
+                clip = ImageClip(str(image_path)).set_duration(image_duration)
                 clips.append(clip)
             
-            # 모든 클립을 하나로 연결
+            # 모든 클립 연결
             final_clip = concatenate_videoclips(clips, method="compose")
             
-            # 배경음악 추가 (있는 경우)
+            # 페이드 인/아웃 효과 추가
+            final_clip = final_clip.fx(vfx.fadein, 1).fx(vfx.fadeout, 1)
+            
+            # 배경 음악 추가
             if audio_file and os.path.exists(audio_file):
-                audio = AudioFileClip(audio_file)
-                # 오디오를 비디오 길이에 맞게 조절
-                if audio.duration > final_clip.duration:
-                    audio = audio.subclip(0, final_clip.duration)
-                else:
-                    # 오디오가 비디오보다 짧으면 반복
-                    audio = audio.loop(duration=final_clip.duration)
-                # 오디오 볼륨 설정
-                audio = audio.volumex(0.7)  # 70% 볼륨
-                final_clip = final_clip.set_audio(audio)
+                try:
+                    logger.info(f"오디오 파일 로드 중: {audio_file}")
+                    audio = AudioFileClip(str(audio_file))
+                    logger.info(f"오디오 길이: {audio.duration}초, 비디오 길이: {final_clip.duration}초")
+                    
+                    # 오디오 길이를 비디오 길이에 맞춤
+                    if audio.duration > final_clip.duration:
+                        audio = audio.subclip(0, final_clip.duration)
+                    else:
+                        # 오디오가 비디오보다 짧으면 반복
+                        audio = audio.loop(duration=final_clip.duration)
+                    
+                    # 오디오 볼륨 조절 (70%로 설정)
+                    audio = audio.volumex(0.7)
+                    logger.info("오디오를 비디오에 적용 중...")
+                    final_clip = final_clip.set_audio(audio)
+                    logger.info("오디오 적용 완료")
+                except Exception as e:
+                    logger.error(f"오디오 처리 중 오류 발생: {str(e)}")
+                    raise
             
             # 출력 파일 경로 생성
-            output_path = self.output_dir / output_filename
+            output_path = str(self.output_dir / output_filename)
             
-            # 비디오 파일로 저장
-            final_clip.write_videofile(str(output_path), fps=24)
+            # 비디오 저장
+            logger.info(f"비디오 저장 중: {output_path}")
+            final_clip.write_videofile(
+                output_path,
+                fps=24,
+                codec='libx264',
+                audio_codec='aac',
+                temp_audiofile='temp-audio.m4a',
+                remove_temp=True,
+                logger=None  # moviepy의 기본 로깅 비활성화
+            )
+            logger.info("비디오 저장 완료")
             
             # 메모리 정리
             final_clip.close()

@@ -9,12 +9,13 @@ from pathlib import Path
 
 class LoLStoreService:
     def __init__(self):
-        self.data_file = Path("data/scraping_results.json")
+        self.data_file = Path("data/lol_store/discounts.json")
         self.exception_file = Path("data/exception_list.json")
-        self.data_file.parent.mkdir(exist_ok=True)
+        self.data_file.parent.mkdir(parents=True, exist_ok=True)
         self.last_update = None
         self.discounts = []
         self.exception_list = self._load_exception_list()
+        self._load_data()
 
     def _load_exception_list(self) -> List[Dict[str, str]]:
         """Load exception list from JSON file"""
@@ -28,7 +29,8 @@ class LoLStoreService:
         """Check if the result is in exception list"""
         for exception in self.exception_list:
             if (result["name"] == exception["name"] and 
-                result["discount"] == exception["discount"]):
+                result["original_price"] == exception["original_price"] and
+                result["discount_price"] == exception["discount_price"]):
                 return True
         return False
 
@@ -129,10 +131,7 @@ class LoLStoreService:
             results = await self.fetch_all_discounted_skins()
             self.discounts = results
             self.last_update = datetime.now(pytz.timezone('Asia/Seoul')).isoformat()
-            
-            # Save results
             self._save_data()
-            
             print(f"Scraping completed at {self.last_update}")
             return self.discounts
         except Exception as e:

@@ -8,8 +8,8 @@ lol_store_service = LoLStoreService()
 @router.get("/discounts", response_model=DiscountResponse)
 async def get_discounts():
     """Get the latest scraping results"""
-    results = lol_store_service.get_latest_results()
-    if not results["results"]:
+    results = await lol_store_service.get_discounts()
+    if not results["discounts"]:
         raise HTTPException(status_code=404, detail="No scraping results available yet")
     return results
 

@@ -3,6 +3,7 @@ import httplib2
 import random
 import time
 from typing import Optional, List
+import json
 
 from apiclient.discovery import build
 from apiclient.errors import HttpError
@@ -56,32 +57,22 @@ class YouTubeUploader:
 
     def _authenticate(self):
         """Authenticate with YouTube API"""
-        if os.path.exists('token.pickle'):
-            with open('token.pickle', 'rb') as token:
-                self.credentials = pickle.load(token)
+        if os.path.exists(OAUTH2_FILE):
+            with open(OAUTH2_FILE, 'r') as f:
+                credentials_data = json.load(f)
+                self.credentials = Credentials.from_authorized_user_info(credentials_data)
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(
+                CLIENT_SECRETS_FILE,
+                [YOUTUBE_UPLOAD_SCOPE]
+            )
+            self.credentials = flow.run_local_server(port=0)
+            
+            # Save credentials
+            with open(OAUTH2_FILE, 'w') as f:
+                json.dump(self.credentials.to_json(), f)
 
-        if not self.credentials or not self.credentials.valid:
-            if self.credentials and self.credentials.expired and self.credentials.refresh_token:
-                self.credentials.refresh(Request())
-            else:
-                flow = InstalledAppFlow.from_client_config(
-                    {
-                        "installed": {
-                            "client_id": settings.YOUTUBE_CLIENT_ID,
-                            "client_secret": settings.YOUTUBE_CLIENT_SECRET,
-                            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-                            "token_uri": "https://oauth2.googleapis.com/token",
-                            "redirect_uris": ["urn:ietf:wg:oauth:2.0:oob", "http://localhost"]
-                        }
-                    },
-                    ["https://www.googleapis.com/auth/youtube.upload"]
-                )
-                self.credentials = flow.run_local_server(port=0)
-
-            with open('token.pickle', 'wb') as token:
-                pickle.dump(self.credentials, token)
-
-        self.youtube = build('youtube', 'v3', credentials=self.credentials)
+        self.youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION, credentials=self.credentials)
 
     def upload_video(
         self,
