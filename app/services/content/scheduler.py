@@ -28,6 +28,11 @@ class ContentScheduler:
         for discount in discounts:
             description += f"{discount['name']} → {discount['price']} ({discount['discount']})\n"
         
+        # 영상 링크 추가
+        description += "\n\n지난 할인 보기: https://www.youtube.com/playlist?list=PLOjGkLv4hSDB54IOZlae8NXw69sjrEoZi"
+        
+        # 해시 태그 추가
+        description += "\n\n#롤스킨할인 #롤스킨세일 #롤할인 #롤할인스킨 #롤스킨 #스킨할인 #게임 #리그오브레전드"
         return description
 
     async def run_weekly_update(self):
@@ -55,6 +60,6 @@ class ContentScheduler:
         description = self._generate_description(discounts)
         video_id = self.youtube_publisher.publish_video(video_path, description=description)
         if video_id:
-            print(f"Successfully uploaded video to YouTube. Video ID: {video_id}")
+            print(f"Successfully ed video to YouTube. Video ID: {video_id}")
         else:
             print("Failed to upload video to YouTube") 

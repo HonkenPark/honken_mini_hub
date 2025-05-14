@@ -120,6 +120,35 @@ class YouTubeUploader:
 
         return self._resumable_upload(insert_request)
 
+    def add_video_to_playlist(self, video_id: str, playlist_id: str) -> bool:
+        """
+        비디오를 재생목록에 추가합니다.
+
+        Args:
+            video_id: 추가할 비디오의 ID
+            playlist_id: 대상 재생목록의 ID
+
+        Returns:
+            bool: 성공 여부
+        """
+        try:
+            self.youtube.playlistItems().insert(
+                part="snippet",
+                body={
+                    "snippet": {
+                        "playlistId": playlist_id,
+                        "resourceId": {
+                            "kind": "youtube#video",
+                            "videoId": video_id
+                        }
+                    }
+                }
+            ).execute()
+            return True
+        except Exception as e:
+            print(f"Failed to add video to playlist: {str(e)}")
+            return False
+
     def _resumable_upload(self, insert_request) -> Optional[str]:
         """재시도 가능한 업로드를 수행합니다."""
         response = None
