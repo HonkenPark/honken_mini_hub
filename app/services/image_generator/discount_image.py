@@ -13,10 +13,10 @@ class DiscountImageGenerator:
         self.rp_icon_path = Path("app/services/image_generator/templates/icon_rp.png")
         
         # 폰트 설정
-        self.title_font = ImageFont.truetype("app/services/image_generator/fonts/NanumGothic.ttf", 56)
-        self.date_font = ImageFont.truetype("app/services/image_generator/fonts/NanumGothicBold.ttf", 78)
-        self.name_font = ImageFont.truetype("app/services/image_generator/fonts/NanumGothicBold.ttf", 58)
-        self.price_font = ImageFont.truetype("app/services/image_generator/fonts/NanumGothic.ttf", 52)
+        self.title_font = ImageFont.truetype("app/services/image_generator/fonts/GamjaFlower-Regular.ttf", 68)
+        self.date_font = ImageFont.truetype("app/services/image_generator/fonts/GamjaFlower-Regular.ttf", 92)
+        self.name_font = ImageFont.truetype("app/services/image_generator/fonts/GamjaFlower-Regular.ttf", 64)
+        self.price_font = ImageFont.truetype("app/services/image_generator/fonts/GamjaFlower-Regular.ttf", 62   )
 
     def _create_template(self):
         """Create a template image with gradient background"""

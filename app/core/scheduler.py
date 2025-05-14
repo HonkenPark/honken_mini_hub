@@ -15,7 +15,7 @@ def setup_scheduler():
         trigger=CronTrigger(
             day_of_week='tue',
             hour=4,
-            minute=5,
+            minute=10,
             timezone=kst
         ),
         id='weekly_content_update',

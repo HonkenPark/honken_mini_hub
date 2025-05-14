@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 import pytz
 from app.services.lol_store.store import LoLStoreService
 from app.services.content.generator import ContentGeneratorService
@@ -9,6 +9,26 @@ class ContentScheduler:
         self.store_service = LoLStoreService()
         self.content_generator = ContentGeneratorService()
         self.youtube_publisher = YouTubePublisherService()
+
+    def _generate_description(self, discounts: list) -> str:
+        """
+        Generate YouTube video description from discounts data
+        
+        Args:
+            discounts: List of discount information
+            
+        Returns:
+            str: Formatted description text
+        """
+        current_date = datetime.now(pytz.timezone('Asia/Seoul'))
+        end_date = current_date + timedelta(days=7)
+        description = f"주간 롤 스킨 할인 정보 ({current_date.strftime('%m월 %d일')} ~ {end_date.strftime('%m월 %d일')})\n\n"
+        
+        # 할인 정보 추가
+        for discount in discounts:
+            description += f"{discount['name']} → {discount['price']} ({discount['discount']})\n"
+        
+        return description
 
     async def run_weekly_update(self):
         """
@@ -32,7 +52,8 @@ class ContentScheduler:
         print(f"Generated {len(image_paths)} images and video: {video_path}")
 
         # 3. YouTube 업로드
-        video_id = self.youtube_publisher.publish_video(video_path)
+        description = self._generate_description(discounts)
+        video_id = self.youtube_publisher.publish_video(video_path, description=description)
         if video_id:
             print(f"Successfully uploaded video to YouTube. Video ID: {video_id}")
         else:

@@ -134,7 +134,7 @@ class VideoGenerator:
         """
         return self.create_video_from_images(
             image_dir=image_dir,
-            output_filename="weekly_sale.mp4",
+            output_filename="주간 롤 스킨 할인 정보.mp4",
             image_duration=image_duration,
             audio_file=audio_file,
             transition_duration=transition_duration

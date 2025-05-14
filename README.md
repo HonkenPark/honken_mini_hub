@@ -22,13 +22,17 @@ To supply private services this project is created by FastAPI
 │   │   └── youtube/      # YouTube 관련 서비스
 │   │       ├── __init__.py
 │   │       └── uploader.py # 비디오 업로드 로직
+│   ├── static/           # 정적 파일 (CSS, JS)
+│   │   ├── css/         # CSS 스타일시트
+│   │   └── js/          # JavaScript 파일
+│   ├── templates/        # HTML 템플릿
 │   ├── utils/            # 유틸리티 함수
 │   └── main.py           # FastAPI 애플리케이션 진입점
 ├── data/                 # 데이터 저장 디렉토리
-│   ├── scraping_results.json # 스크래핑 결과
 │   └── exception_results.json # 예외 처리 결과
 ├── tests/               # 테스트 코드
 ├── requirements.txt     # 프로젝트 의존성
+├── restart.sh          # 도커 재시작 스크립트
 └── README.md           # 프로젝트 문서
 ```
 
@@ -37,11 +41,17 @@ To supply private services this project is created by FastAPI
 - League of Legends 스토어의 주간 스킨 할인 정보 취합
 - 취합된 정보의 이미지 및 영상화 후 유튜브에 게시
 - 스케줄러를 통한 주기적인 데이터 업데이트
+- 웹 인터페이스를 통한 API 정보 및 서비스 상태 확인
+
+## 웹 인터페이스
+
+- `GET /`: 메인 페이지 (HTML)
+  - API 정보 표시
+  - 실시간 서버 상태 확인
+  - 반응형 디자인
 
 ## API 엔드포인트
 
-- `GET /`: API 기본 정보
-- `GET /discounts`: 현재 할인 정보 조회
 - `GET /api/v1/lol-store/discounts`: 할인 정보 조회
 - `GET /api/v1/lol-store/last-update`: 마지막 스크래핑 시간 조회
 
@@ -54,8 +64,27 @@ To supply private services this project is created by FastAPI
 - Uvicorn: ASGI 서버
 - Google API Client: YouTube API 연동
 - OAuth2Client: YouTube 인증
+- HTML5/CSS3: 웹 인터페이스
+- JavaScript: 동적 웹 기능
+- Docker: 컨테이너화
 
 ## 설치 및 실행
+
+### 도커를 사용한 실행
+
+1. 도커 이미지 빌드 및 실행:
+```bash
+./restart.sh
+```
+
+이 스크립트는 다음 작업을 자동으로 수행합니다:
+- 기존 컨테이너 중지 및 삭제
+- 기존 이미지 삭제
+- 새 이미지 빌드
+- 새 컨테이너 실행
+- 컨테이너 로그 표시
+
+### 개발 모드 실행
 
 1. 의존성 설치:
 ```bash
