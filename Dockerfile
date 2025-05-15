@@ -46,5 +46,8 @@ RUN playwright install
 # 애플리케이션 파일 복사
 COPY . .
 
+# 환경 변수 설정
+ENV PYTHONUNBUFFERED=1
+
 # FastAPI 서버 실행
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"] 
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--log-level", "debug"] 
