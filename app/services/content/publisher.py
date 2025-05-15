@@ -34,7 +34,7 @@ class YouTubePublisherService:
             file_path=video_path,
             title=title,
             description=description,
-            privacy_status="private",
+            privacy_status="public",
             keywords=["롤스킨할인", "롤스킨세일", "롤할인", "롤할인스킨", "롤스킨", "스킨할인", "게임", "리그오브레전드"]
         )
 
