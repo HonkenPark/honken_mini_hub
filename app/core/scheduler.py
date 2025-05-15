@@ -9,6 +9,19 @@ def setup_scheduler():
     """Setup scheduler for weekly scraping every Monday at 00:00 KST"""
     kst = timezone('Asia/Seoul')
     
+    scheduler.add_job(
+        func=ContentScheduler().create_exception_list,
+        trigger=CronTrigger(
+            day_of_week='tue',
+            hour=3,
+            minute=30,
+            timezone=kst
+        ),
+        id='create_exception_list',
+        name='Create LoL previous discounts list',
+        replace_existing=True
+    )
+    
     # Create scheduler job
     scheduler.add_job(
         func=ContentScheduler().run_weekly_update,

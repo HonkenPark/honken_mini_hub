@@ -34,6 +34,18 @@ class ContentScheduler:
         # 해시 태그 추가
         description += "\n\n#롤스킨할인 #롤스킨세일 #롤할인 #롤할인스킨 #롤스킨 #스킨할인 #게임 #리그오브레전드"
         return description
+    
+    async def create_exception_list(self):
+        """
+        Create exception list from exception discounts data
+        """
+        discounts = await self.store_service.update_exception_discounts()
+        if not discounts:
+            print("No discounts found. Exception list creation skipped.")
+        else:
+            print("Exception list is created.")
+        return
+        
 
     async def run_weekly_update(self):
         """
@@ -60,6 +72,6 @@ class ContentScheduler:
         description = self._generate_description(discounts)
         video_id = self.youtube_publisher.publish_video(video_path, description=description)
         if video_id:
-            print(f"Successfully ed video to YouTube. Video ID: {video_id}")
+            print(f"Successfully uploaded video to YouTube. Video ID: {video_id}")
         else:
             print("Failed to upload video to YouTube") 

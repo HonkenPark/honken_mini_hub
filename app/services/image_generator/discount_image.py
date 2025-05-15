@@ -93,6 +93,13 @@ class DiscountImageGenerator:
 
     def generate_all_images(self, skins_data):
         """Generate images for all skins"""
+        # 기존 이미지 파일 삭제
+        for file in self.output_dir.glob("*.png"):
+            try:
+                file.unlink()
+            except Exception as e:
+                print(f"Error deleting file {file}: {e}")
+
         generated_paths = []
         for i, skin in enumerate(skins_data["discounts"], 1):
             path = self.generate_discount_image(skin, i)

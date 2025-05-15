@@ -80,6 +80,8 @@ class VideoGenerator:
                     
                     # 오디오 볼륨 조절 (70%로 설정)
                     audio = audio.volumex(0.7)
+                    # 오디오 페이드 인/아웃 효과 추가
+                    audio = audio.audio_fadein(1).audio_fadeout(1)
                     logger.info("오디오를 비디오에 적용 중...")
                     final_clip = final_clip.set_audio(audio)
                     logger.info("오디오 적용 완료")

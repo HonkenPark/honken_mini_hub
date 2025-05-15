@@ -34,15 +34,15 @@ class YouTubePublisherService:
             file_path=video_path,
             title=title,
             description=description,
-            privacy_status="public",
+            privacy_status="private",
             keywords=["롤스킨할인", "롤스킨세일", "롤할인", "롤할인스킨", "롤스킨", "스킨할인", "게임", "리그오브레전드"]
         )
 
         # 업로드 성공 시 재생목록에 추가
-        if video_id:
-            if self.youtube_uploader.add_video_to_playlist(video_id, self.playlist_id):
-                print(f"Successfully added video to playlist: {self.playlist_id}")
-            else:
-                print(f"Failed to add video to playlist: {self.playlist_id}")
+        # if video_id:
+        #     if self.youtube_uploader.add_video_to_playlist(video_id, self.playlist_id):
+        #         print(f"Successfully added video to playlist: {self.playlist_id}")
+        #     else:
+        #         print(f"Failed to add video to playlist: {self.playlist_id}")
 
         return video_id 
