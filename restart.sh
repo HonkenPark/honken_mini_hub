@@ -36,6 +36,7 @@ docker run -d \
     -p 8000:8000 \
     -v $(pwd)/data:/app/data \
     -v $(pwd)/app/core/config:/app/app/core/config \
+    -v $(pwd)/.env.slp:/app/.env.slp \
     --restart unless-stopped \
     honken_mini_hub:latest
 

@@ -3,13 +3,22 @@ import pytz
 from app.services.lol_store.store import LoLStoreService
 from app.services.content.generator import ContentGeneratorService
 from app.services.content.publisher import YouTubePublisherService
+from app.services.slp.login import SLPLoginService
 
 class ContentScheduler:
     def __init__(self):
         self.store_service = LoLStoreService()
         self.content_generator = ContentGeneratorService()
         self.youtube_publisher = YouTubePublisherService()
-
+        self.slp_login = SLPLoginService()
+        
+    def _login_to_slp(self):
+        """
+        Login to SLP (Student Life Portal)
+        """
+        self.slp_login.login()
+        
+        
     def _generate_description(self, discounts: list) -> str:
         """
         Generate YouTube video description from discounts data
