@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
 from app.api.v1.router import api_router
 from app.core.scheduler import setup_scheduler
 from app.services.lol_store import LoLStoreService
@@ -34,4 +34,17 @@ async def root():
 @app.get("/discounts")
 async def get_discounts():
     """Get current discount information"""
-    return await lol_store_service.get_discounts() 
+    return await lol_store_service.get_discounts()
+
+@app.get("/skin_discount")
+async def get_latest_video():
+    """Get the latest skin discount video URL"""
+    try:
+        with open("data/lol_store/latest_video_id.txt", "r") as f:
+            video_url = f.read().strip()
+        return JSONResponse(content={"video_url": video_url})
+    except FileNotFoundError:
+        return JSONResponse(
+            status_code=404,
+            content={"error": "Latest video information not found"}
+        ) 

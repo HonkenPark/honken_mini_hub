@@ -27,7 +27,7 @@ def setup_scheduler():
         trigger=CronTrigger(
             day_of_week='tue',
             hour=3,
-            minute=30,
+            minute=10,
             timezone=kst
         ),
         id='create_exception_list',

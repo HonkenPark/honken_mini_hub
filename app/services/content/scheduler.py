@@ -82,5 +82,10 @@ class ContentScheduler:
         video_id = self.youtube_publisher.publish_video(video_path, description=description)
         if video_id:
             print(f"Successfully uploaded video to YouTube. Video ID: {video_id}")
+            # Save video ID to file
+            video_url = f"https://www.youtube.com/shorts/{video_id}"
+            with open("data/lol_store/latest_video_id.txt", "w") as f:
+                f.write(video_url)
+            print(f"Updated latest video ID in file: {video_url}")
         else:
             print("Failed to upload video to YouTube") 
