@@ -1,0 +1,190 @@
+[
+  {
+    "word": "abroad",
+    "definition": [
+      {
+        "part_of_speech": "adv.",
+        "meaning": "in or to a foreign country"
+      }
+    ]
+  },
+  {
+    "word": "available",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "ready to be used; not too busy to do something"
+      }
+    ]
+  },
+  {
+    "word": "border",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the line separating two countries, states, etc."
+      }
+    ]
+  },
+  {
+    "word": "castle",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "a strong home with walls around it"
+      }
+    ]
+  },
+  {
+    "word": "coast",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the land by the sea"
+      }
+    ]
+  },
+  {
+    "word": "comfort",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to make someone feel better"
+      },
+      {
+        "part_of_speech": "n.",
+        "meaning": "a feeling of relief or happiness"
+      }
+    ]
+  },
+  {
+    "word": "cost",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the amount of money needed to pay for something"
+      },
+      {
+        "part_of_speech": "v.",
+        "meaning": "to require payment for something"
+      }
+    ]
+  },
+  {
+    "word": "cultural",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "relating to a particular society, customs, and art"
+      }
+    ]
+  },
+  {
+    "word": "encounter",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to meet a person, often by accident; to experience something"
+      }
+    ]
+  },
+  {
+    "word": "fortunate",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "having or bringing good luck"
+      }
+    ]
+  },
+  {
+    "word": "journey",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "a long trip to a distant place"
+      }
+    ]
+  },
+  {
+    "word": "local",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "related to the area that someone lives in"
+      }
+    ]
+  },
+  {
+    "word": "native",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "relating to the place a person was born"
+      }
+    ]
+  },
+  {
+    "word": "nearby",
+    "definition": [
+      {
+        "part_of_speech": "adv./adj.",
+        "meaning": "not far away"
+      }
+    ]
+  },
+  {
+    "word": "observe",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to see or notice; to watch carefully"
+      }
+    ]
+  },
+  {
+    "word": "passenger",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "a person riding in a vehicle"
+      }
+    ]
+  },
+  {
+    "word": "preserve",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to keep alive or safe"
+      }
+    ]
+  },
+  {
+    "word": "remain",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to stay in the same place or condition"
+      }
+    ]
+  },
+  {
+    "word": "sightseeing",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the act of visiting places of interest"
+      }
+    ]
+  },
+  {
+    "word": "village",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "a small town in a rural area"
+      }
+    ]
+  }
+]

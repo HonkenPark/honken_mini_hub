@@ -6,43 +6,45 @@ from app.services.content.scheduler import ContentScheduler
 scheduler = AsyncIOScheduler()
 
 def setup_scheduler():
-    """Setup scheduler for weekly scraping every Monday at 00:00 KST"""
-    kst = timezone('Asia/Seoul')
+    """Setup weekly LoL store jobs on fixed Pacific Time (US DST auto-handled)."""
+    # LoL sale refresh follows US Pacific. Fixed PT times auto-convert to KST
+    # (PDT → Tue 03:10/04:10 KST, PST → Tue 04:10/05:10 KST).
+    pt = timezone('America/Los_Angeles')
     
-    scheduler.add_job(
-        func=ContentScheduler()._login_to_slp,
-        trigger=CronTrigger(
-            hour=0,
-            minute=10,
-            timezone=kst
-        ),
-        id='slp_login',
-        name='SLP login for mileage',
-        replace_existing=True
-    )
+    # scheduler.add_job(
+    #     func=ContentScheduler()._login_to_slp,
+    #     trigger=CronTrigger(
+    #         hour=0,
+    #         minute=10,
+    #         timezone=timezone('Asia/Seoul')
+    #     ),
+    #     id='slp_login',
+    #     name='SLP login for mileage',
+    #     replace_existing=True
+    # )
     
-    # 매주 화요일 새벽 3시 10분 - 예외처리 리스트 생성
+    # 매주 월요일 11:10 PT - 예외처리 리스트 생성 (KST 화 03:10 PDT / 04:10 PST)
     scheduler.add_job(
         func=ContentScheduler().create_exception_list,
         trigger=CronTrigger(
-            day_of_week='tue',
-            hour=3,
+            day_of_week='mon',
+            hour=11,
             minute=10,
-            timezone=kst
+            timezone=pt
         ),
         id='create_exception_list',
         name='Create LoL previous discounts list',
         replace_existing=True
     )
     
-    # 매주 화요일 새벽 4시 10분 - 주간 롤 스킨 갱신 (서머타임 해제 시, 5시로 변경 필요)
+    # 매주 월요일 12:10 PT - 주간 롤 스킨 갱신 (KST 화 04:10 PDT / 05:10 PST)
     scheduler.add_job(
         func=ContentScheduler().run_weekly_update,
         trigger=CronTrigger(
-            day_of_week='tue',
-            hour=4,
+            day_of_week='mon',
+            hour=12,
             minute=10,
-            timezone=kst
+            timezone=pt
         ),
         id='weekly_content_update',
         name='Weekly LoL Store Content Update',
@@ -50,4 +52,4 @@ def setup_scheduler():
     )
     
     # Start the scheduler
-    scheduler.start() 
+    scheduler.start()

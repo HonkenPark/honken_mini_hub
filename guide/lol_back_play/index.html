@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>롤백플레이 - 스포일러 없는 LOL 경기 시청</title>
+    <style>
+        :root {
+            --primary-color: #FFCB74;
+            --secondary-color: #313030;
+            --accent-color: #FFCB74;
+            --background-color: #f8f9fa;
+            --card-background: #ffffff;
+            --text-color: #313030;
+            --text-secondary: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px 20px;
+            background: var(--secondary-color);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        header:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            color: #ffffff;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+        }
+
+        section {
+            background: var(--card-background);
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 203, 116, 0.2);
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 20px;
+            padding: 15px 20px;
+            background: var(--background-color);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            border: 1px solid rgba(255, 203, 116, 0.2);
+        }
+
+        .feature-list li:hover {
+            transform: translateX(10px);
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .feature-list li:before {
+            content: "→";
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .feature-list li:hover:before {
+            color: var(--primary-color);
+        }
+
+        .privacy-policy {
+            background: var(--background-color);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 25px;
+            background: var(--background-color);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 203, 116, 0.2);
+        }
+
+        .contact-item:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            background: var(--secondary-color);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 10px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>롤백플레이</h1>
+            <p class="subtitle">스포일러 없는 LOL 경기 시청</p>
+        </header>
+
+        <section>
+            <h2>앱 소개</h2>
+            <p>롤백플레이는 리그 오브 레전드 경기를 스포일러 없이 시청할 수 있도록 도와주는 앱입니다.<br>LCK, MSI, 월드챔피언십의 경기를 스포 없이 안전하게 시청할 수 있습니다.</p>
+        </section>
+
+        <section>
+            <h2>주요 기능</h2>
+            <ul class="feature-list">
+                <li>스포일러 없는 경기 시청</li>
+                <li>LCK, MSI, 월드챔피언십 경기 지원</li>
+                <li>캘린더를 통한 편리한 경기 검색</li>
+                <li>세트별 영상 시청</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>개인정보 처리방침</h2>
+            <div class="privacy-policy">
+                <p>롤백플레이는 사용자의 개인정보를 수집하지 않습니다. 앱은 다음과 같은 정보만을 사용합니다:</p>
+                <ul class="feature-list">
+                    <li>경기 일정 및 결과 정보</li>
+                    <li>팀 정보</li>
+                    <li>영상 링크</li>
+                </ul>
+                <p>이 정보들은 모두 공개된 정보이며, 사용자의 개인정보를 포함하지 않습니다.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>문의 및 지원</h2>
+            <p>앱 사용 중 문제가 발생하거나 문의사항이 있으시면 다음 방법으로 연락해 주세요:</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>honken.park@gmail.com</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 Splime. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html> 

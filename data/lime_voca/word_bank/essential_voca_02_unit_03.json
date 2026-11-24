@@ -1,0 +1,194 @@
+[
+  {
+    "word": "active",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "busy doing something physical"
+      }
+    ]
+  },
+  {
+    "word": "appointment",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "a meeting set for a certain time and place"
+      }
+    ]
+  },
+  {
+    "word": "cancer",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "a disease that causes cells to grow in the body"
+      }
+    ]
+  },
+  {
+    "word": "cause",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the reason for a certain action"
+      },
+      {
+        "part_of_speech": "v.",
+        "meaning": "to make something happen"
+      }
+    ]
+  },
+  {
+    "word": "chemical",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "a material produced or used in chemistry"
+      },
+      {
+        "part_of_speech": "adj.",
+        "meaning": "relating to chemistry"
+      }
+    ]
+  },
+  {
+    "word": "deaf",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "unable to hear anything"
+      }
+    ]
+  },
+  {
+    "word": "death",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the end of life"
+      }
+    ]
+  },
+  {
+    "word": "digest",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to turn food into nutrients in the body"
+      }
+    ]
+  },
+  {
+    "word": "drug",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "something that treats a sick person"
+      }
+    ]
+  },
+  {
+    "word": "experiment",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "a test done to try to learn something new"
+      }
+    ]
+  },
+  {
+    "word": "function",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "a use of a piece of equipment"
+      }
+    ]
+  },
+  {
+    "word": "growth",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the act of becoming bigger or larger"
+      }
+    ]
+  },
+  {
+    "word": "harm",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to hurt or damage"
+      },
+      {
+        "part_of_speech": "n.",
+        "meaning": "an injury or damage"
+      }
+    ]
+  },
+  {
+    "word": "hunger",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the need or desire for food"
+      }
+    ]
+  },
+  {
+    "word": "lively",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "full of life or energy"
+      }
+    ]
+  },
+  {
+    "word": "medical",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "relating to medicine and the treatment of diseases"
+      }
+    ]
+  },
+  {
+    "word": "nutrition",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the healthy material that someone gets from food"
+      }
+    ]
+  },
+  {
+    "word": "physical",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "relating to the body"
+      }
+    ]
+  },
+  {
+    "word": "recover",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to become well again after an illness"
+      }
+    ]
+  },
+  {
+    "word": "relax",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to rest"
+      }
+    ]
+  }
+]

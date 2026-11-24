@@ -1,0 +1,194 @@
+[
+    {
+    "word": "atmosphere",
+    "definition": [
+        {
+            "part_of_speech": "n.",
+            "meaning": "the air"
+        }
+    ]
+  },
+  {
+    "word": "blossom",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the flower of a plant"
+      },
+      {
+        "part_of_speech": "v.",
+        "meaning": "to produce flowers"
+      }
+    ]
+  },
+  {
+    "word": "caterpillar",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "an insect that will become a butterfly or moth"
+      }
+    ]
+  },
+  {
+    "word": "climate",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the typical weather in an area"
+      }
+    ]
+  },
+  {
+    "word": "countryside",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "an area with fields away from cities"
+      }
+    ]
+  },
+  {
+    "word": "creature",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "an animal or person"
+      }
+    ]
+  },
+  {
+    "word": "greenhouse",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "a building used to grow plants in any season"
+      }
+    ]
+  },
+  {
+    "word": "harvest",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to pick crops in a field"
+      },
+      {
+        "part_of_speech": "n.",
+        "meaning": "the act of picking crops in a field"
+      }
+    ]
+  },
+  {
+    "word": "horizon",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the line where the sky meets the land or the sea"
+      }
+    ]
+  },
+  {
+    "word": "insect",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "an animal with three body parts, six legs, and two pairs of wings"
+      }
+    ]
+  },
+  {
+    "word": "landmark",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "a building or structure used when people give directions"
+      }
+    ]
+  },
+  {
+    "word": "liquid",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "flowing like water"
+      },
+      {
+        "part_of_speech": "n.",
+        "meaning": "anything that flows like water"
+      }
+    ]
+  },
+  {
+    "word": "outdoor",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "being or located outside"
+      }
+    ]
+  },
+  {
+    "word": "pleasant",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "nice and enjoyable"
+      }
+    ]
+  },
+  {
+    "word": "pollute",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to make a place dirty"
+      }
+    ]
+  },
+  {
+    "word": "scenery",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the appearance of a place"
+      }
+    ]
+  },
+  {
+    "word": "settle",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to agree to a solution; to move to a new place to live"
+      }
+    ]
+  },
+  {
+    "word": "sight",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the ability to see"
+      }
+    ]
+  },
+  {
+    "word": "typhoon",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "a violent tropical storm"
+      }
+    ]
+  },
+  {
+    "word": "underground",
+    "definition": [
+      {
+        "part_of_speech": "adv./adj.",
+        "meaning": "below the ground"
+      }
+    ]
+  }
+]

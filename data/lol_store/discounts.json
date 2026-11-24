@@ -1,95 +1,95 @@
 {
-  "last_update": "2025-05-15T15:47:06.815027+09:00",
+  "last_update": "2026-11-24T07:20:37.022964+09:00",
   "discounts": [
     {
-      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/799001.jpg",
-      "name": "늑대에게 선택받은 자 암베사",
-      "price": "1350 RP",
-      "discount": "-25%"
-    },
-    {
-      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/31023.jpg",
-      "name": "깨진 언약 초가스",
-      "price": "675 RP",
-      "discount": "-50%"
-    },
-    {
-      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/234021.jpg",
-      "name": "왕 비에고",
-      "price": "742 RP",
-      "discount": "-45%"
-    },
-    {
-      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/115024.jpg",
-      "name": "꿀잼 직스",
-      "price": "742 RP",
-      "discount": "-45%"
-    },
-    {
-      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/78016.jpg",
-      "name": "우주비행사 뽀삐",
-      "price": "607 RP",
-      "discount": "-55%"
-    },
-    {
-      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/9009.jpg",
-      "name": "시공간 침략자 피들스틱",
-      "price": "675 RP",
-      "discount": "-50%"
-    },
-    {
-      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/28005.jpg",
-      "name": "핏빛달 이블린",
-      "price": "390 RP",
-      "discount": "-60%"
-    },
-    {
-      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/18012.jpg",
-      "name": "오메가 분대 트리스타나",
-      "price": "540 RP",
-      "discount": "-60%"
-    },
-    {
-      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/12010.jpg",
-      "name": "내가 젖소 알리스타",
-      "price": "585 RP",
-      "discount": "-40%"
-    },
-    {
-      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/91005.jpg",
-      "name": "핏빛달 탈론",
+      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/904001.jpg",
+      "name": "불멸의 영웅 자헨",
       "price": "810 RP",
       "discount": "-40%"
     },
     {
-      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/38005.jpg",
-      "name": "우주의 지배자 카사딘",
+      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/800001.jpg",
+      "name": "아케인 의원 멜",
+      "price": "1012 RP",
+      "discount": "-25%"
+    },
+    {
+      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/92063.jpg",
+      "name": "태고의 습격 리븐",
+      "price": "675 RP",
+      "discount": "-50%"
+    },
+    {
+      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/254039.jpg",
+      "name": "태고의 습격 바이",
+      "price": "675 RP",
+      "discount": "-50%"
+    },
+    {
+      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/1040.jpg",
+      "name": "겨울의 축복 애니",
+      "price": "810 RP",
+      "discount": "-40%"
+    },
+    {
+      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/420018.jpg",
+      "name": "서리달 일라오이",
+      "price": "607 RP",
+      "discount": "-55%"
+    },
+    {
+      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/113026.jpg",
+      "name": "해를 삼킨 세주아니",
+      "price": "607 RP",
+      "discount": "-55%"
+    },
+    {
+      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/39026.jpg",
+      "name": "감시자 이렐리아",
+      "price": "675 RP",
+      "discount": "-50%"
+    },
+    {
+      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/27010.jpg",
+      "name": "저항군 신지드",
+      "price": "540 RP",
+      "discount": "-60%"
+    },
+    {
+      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/163003.jpg",
+      "name": "수영장 파티 탈리야",
+      "price": "1012 RP",
+      "discount": "-25%"
+    },
+    {
+      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/498001.jpg",
+      "name": "황혼 우주 자야",
+      "price": "540 RP",
+      "discount": "-60%"
+    },
+    {
+      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/202002.jpg",
+      "name": "핏빛달 진",
       "price": "877 RP",
       "discount": "-35%"
     },
     {
-      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/223001.jpg",
-      "name": "마스터 셰프 탐 켄치",
-      "price": "438 RP",
-      "discount": "-55%"
+      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/105008.jpg",
+      "name": "복실복실 피즈",
+      "price": "487 RP",
+      "discount": "-50%"
     },
     {
-      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/3005.jpg",
-      "name": "연미복 갈리오",
-      "price": "337 RP",
-      "discount": "-55%"
-    },
-    {
-      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/35006.jpg",
-      "name": "신바람 탈 샤코",
-      "price": "390 RP",
-      "discount": "-60%"
-    },
-    {
-      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/26002.jpg",
-      "name": "신바람난 질리언",
-      "price": "312 RP",
+      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/14004.jpg",
+      "name": "전쟁광 사이온",
+      "price": "585 RP",
       "discount": "-40%"
+    },
+    {
+      "url": "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/33004.jpg",
+      "name": "프렐요드 람머스",
+      "price": "208 RP",
+      "discount": "-60%"
     }
   ]
 }

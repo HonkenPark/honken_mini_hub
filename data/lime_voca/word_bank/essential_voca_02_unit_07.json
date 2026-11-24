@@ -1,0 +1,194 @@
+[
+  {
+    "word": "achieve",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to do something well or successfully"
+      }
+    ]
+  },
+  {
+    "word": "average",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "referring to a typical amount, rate, number, etc."
+      }
+    ]
+  },
+  {
+    "word": "cheat",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to act in a dishonest way"
+      }
+    ]
+  },
+  {
+    "word": "clever",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "smart"
+      }
+    ]
+  },
+  {
+    "word": "compete",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to try to do better than others"
+      }
+    ]
+  },
+  {
+    "word": "concentrate",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to focus on or think about something very much"
+      }
+    ]
+  },
+  {
+    "word": "excellent",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "very good"
+      }
+    ]
+  },
+  {
+    "word": "genius",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "a very smart person"
+      }
+    ]
+  },
+  {
+    "word": "information",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "knowledge or facts"
+      }
+    ]
+  },
+  {
+    "word": "progress",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to move forward or to develop"
+      },
+      {
+        "part_of_speech": "n.",
+        "meaning": "movement forward or the process of development"
+      }
+    ]
+  },
+  {
+    "word": "pronounce",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to say the sound of a word or letter"
+      }
+    ]
+  },
+  {
+    "word": "purpose",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the reason something exists"
+      }
+    ]
+  },
+  {
+    "word": "research",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to study something carefully"
+      },
+      {
+        "part_of_speech": "n.",
+        "meaning": "a careful study of something"
+      }
+    ]
+  },
+  {
+    "word": "review",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to go over something again"
+      }
+    ]
+  },
+  {
+    "word": "solution",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "an explanation or answer"
+      }
+    ]
+  },
+  {
+    "word": "subtract",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to take one number away from another"
+      }
+    ]
+  },
+  {
+    "word": "system",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "a combination of things to create a whole"
+      }
+    ]
+  },
+  {
+    "word": "teenager",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "a person between the ages of 13 and 19"
+      }
+    ]
+  },
+  {
+    "word": "textbook",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "a book used in a classroom"
+      }
+    ]
+  },
+  {
+    "word": "total",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "a complete amount"
+      },
+      {
+        "part_of_speech": "adj.",
+        "meaning": "relating to the whole of something"
+      }
+    ]
+  }
+]

@@ -10,7 +10,7 @@ from pathlib import Path
 class LoLStoreService:
     def __init__(self):
         self.data_file = Path("data/lol_store/discounts.json")
-        self.exception_file = Path("data/lol_store/discounts.json")
+        self.exception_file = Path("data/lol_store/exception_list.json")
         self.data_file.parent.mkdir(parents=True, exist_ok=True)
         self.last_update = None
         self.discounts = []
@@ -143,15 +143,24 @@ class LoLStoreService:
                 print(f"✅ 총 {len(all_results)}개 항목을 찾았습니다.")
                 return all_results
             
+    def _save_exception_list(self, discounts: List[Dict[str, Any]], last_update: str):
+        """Save exception list to its own file (separate from weekly results)"""
+        data = {
+            "last_update": last_update,
+            "discounts": discounts
+        }
+        with open(self.exception_file, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+
     async def update_exception_discounts(self):
-        """Update exception discount information by scraping"""
+        """Scrape current discounts (unfiltered) and save them as the exception list"""
         try:
             results = await self.fetch_all_discounted_skins(is_exception=True)
-            self.discounts = results
-            self.last_update = datetime.now(pytz.timezone('Asia/Seoul')).isoformat()
-            self._save_data()
-            print(f"Scraping completed at {self.last_update}")
-            return self.discounts
+            last_update = datetime.now(pytz.timezone('Asia/Seoul')).isoformat()
+            self._save_exception_list(results, last_update)
+            self.exception_list = results
+            print(f"Exception list saved at {last_update} ({len(results)} items)")
+            return results
         except Exception as e:
             print(f"Error during scheduled scraping: {str(e)}")
             return []
@@ -159,6 +168,9 @@ class LoLStoreService:
     async def update_discounts(self):
         """Update discount information by scraping"""
         try:
+            # Reload exception list from file on every run (not cached from server startup)
+            self.exception_list = self._load_exception_list()
+            print(f"Loaded exception list: {len(self.exception_list)} items")
             results = await self.fetch_all_discounted_skins(is_exception=False)
             self.discounts = results
             self.last_update = datetime.now(pytz.timezone('Asia/Seoul')).isoformat()

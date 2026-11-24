@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 from typing import Optional, List
-from moviepy.editor import VideoFileClip, ImageClip, concatenate_videoclips, AudioFileClip, vfx
+from moviepy.editor import VideoFileClip, ImageClip, concatenate_videoclips, AudioFileClip, vfx, afx
 import logging
 
 logger = logging.getLogger(__name__)
@@ -75,8 +75,8 @@ class VideoGenerator:
                     if audio.duration > final_clip.duration:
                         audio = audio.subclip(0, final_clip.duration)
                     else:
-                        # 오디오가 비디오보다 짧으면 반복
-                        audio = audio.loop(duration=final_clip.duration)
+                        # 오디오가 비디오보다 짧으면 반복 (AudioFileClip.loop는 MoviePy 1.x에 없음)
+                        audio = afx.audio_loop(audio, duration=final_clip.duration)
                     
                     # 오디오 볼륨 조절 (70%로 설정)
                     audio = audio.volumex(0.7)

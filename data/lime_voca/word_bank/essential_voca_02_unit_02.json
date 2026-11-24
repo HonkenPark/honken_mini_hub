@@ -1,0 +1,186 @@
+[
+  {
+    "word": "amaze",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to surprise someone"
+      }
+    ]
+  },
+  {
+    "word": "anger",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the feeling of being upset or mad"
+      }
+    ]
+  },
+  {
+    "word": "anxious",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "feeling worried or concerned"
+      }
+    ]
+  },
+  {
+    "word": "ashamed",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "feeling embarrassed because of one's actions"
+      }
+    ]
+  },
+  {
+    "word": "bother",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to annoy someone"
+      }
+    ]
+  },
+  {
+    "word": "cheerful",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "happy or in a good mood"
+      }
+    ]
+  },
+  {
+    "word": "curious",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "eager to know about something"
+      }
+    ]
+  },
+  {
+    "word": "dull",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "not interesting; not bright"
+      }
+    ]
+  },
+  {
+    "word": "foolish",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "showing a lack of sense or wisdom"
+      }
+    ]
+  },
+  {
+    "word": "gentle",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "kind and calm"
+      }
+    ]
+  },
+  {
+    "word": "grateful",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "very thankful for someone's kindness"
+      }
+    ]
+  },
+  {
+    "word": "happiness",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the state of being glad"
+      }
+    ]
+  },
+  {
+    "word": "personality",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "the general way a person behaves"
+      }
+    ]
+  },
+  {
+    "word": "reasonable",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "making sense"
+      }
+    ]
+  },
+  {
+    "word": "regret",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to feel bad about a past action"
+      }
+    ]
+  },
+  {
+    "word": "shock",
+    "definition": [
+      {
+        "part_of_speech": "v.",
+        "meaning": "to surprise or upset a person"
+      },
+      {
+        "part_of_speech": "n.",
+        "meaning": "the feeling of being surpirsed"
+      }
+    ]
+  },
+  {
+    "word": "uneasy",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "feeling worried or unhappy about something"
+      }
+    ]
+  },
+  {
+    "word": "unhappy",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "feeling sad or upset"
+      }
+    ]
+  },
+  {
+    "word": "useless",
+    "definition": [
+      {
+        "part_of_speech": "adj.",
+        "meaning": "not having a purpose"
+      }
+    ]
+  },
+  {
+    "word": "wisdom",
+    "definition": [
+      {
+        "part_of_speech": "n.",
+        "meaning": "knowledge of what is true and right"
+      }
+    ]
+  }
+]
